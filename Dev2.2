@@ -5,181 +5,56 @@
 <head>
                                                   <title>So you say you know BLack People</title>
     <script>
-        function checkAnswer1() {
-            var answer1 = document.querySelector('input[name="answer1"]:checked').value;
-            var result1 = document.getElementById("result1");
+        function checkAnswer(questionNumber, correctAnswer) {
+            var selectedAnswer = document.querySelector('input[name="answer' + questionNumber + '"]:checked');
+            var result = document.getElementById("result" + questionNumber);
 
-            if (answer1 === "B") {
-                result1.textContent = "Correct. You are really smart! How did you get so smart?";
-            } else {
-                result1.textContent = "Wrong. How did you not know the answer to this question? You should watch it again.";
+            if (!selectedAnswer) {
+                result.textContent = "Please select an answer before submitting.";
+                return;
             }
+
+            result.textContent = selectedAnswer.value === correctAnswer
+                ? "Correct! Nice work."
+                : "Not quite. Better luck on the next question.";
         }
 
-        function checkAnswer2() {
-            var answer2 = document.querySelector('input[name="answer2"]:checked').value;
-            var result2 = document.getElementById("result2");
-
-            if (answer2 === "A") {
-                result2.textContent = "Correct. Yep, I must be in the presence of a genius!";
-            } else {
-                result2.textContent = "Wrong. Look, there is no shame in saying I need to go back to school.";
-            }
-        }
-		
-		       function checkAnswer3() {
-            var answer3 = document.querySelector('input[name="answer3"]:checked').value;
-            var result3 = document.getElementById("result3");
-
-            if (answer3 === "C") {
-                result3.textContent = "Correct. Yo I am reall impressed? I would go to family fued with you";
-            } else {
-                result3.textContent = "Wrong. I think this kid is kind of slow. Don't tell nobody";
-            }
-        }
-		
-		       function checkAnswer4() {
-            var answer4 = document.querySelector('input[name="answer4"]:checked').value;
-            var result4 = document.getElementById("result4");
-
-            if (answer4 === "A") {
-                result4.textContent = "Correct. I can tell you went to college good answer money well spent?";
-            } else {
-                result4.textContent = "Dam wrong again, look I don't want to talk about you but how about a book for Christmas.";
-            }
-        }
-		
-		       function checkAnswer5() {
-            var answer5 = document.querySelector('input[name="answer5"]:checked').value;
-            var result5 = document.getElementById("result5");
-
-            if (answer5 === "B") {
-                result5.textContent = "Correct, Ever time that bitch late?";
-            } else {
-                result5.textContent = "Wrong, This is well know she aint never ever ever ever ever been on time. This bitch was born late.";
-            }
-        }
-		
-		       function checkAnswer6() {
-            var answer6 = document.querySelector('input[name="answer6"]:checked').value;
-            var result6 = document.getElementById("result6");
-
-            if (answer6 === "C") {
-                result6.textContent = "correct, You better get that right! She a Dallas Legand?";
-            } else {
-                result6.textContent = "wrong, You can't be from Dallas? You should know that answer.";
-            }
-        }
-		
-		       function checkAnswer7() {
-            var answer7 = document.querySelector('input[name="answer7"]:checked').value;
-            var result7 = document.getElementById("result7");
-
-            if (answer7 === "B") {
-                result7.textContent = "Correct, You are really smart! How did you get so smart?";
-            } else {
-                result7.textContent = "Wrong, How did you not know the answer to this question? You should watch it again.";
-            }
-        }
-		
-		       function checkAnswer8() {
-            var answer8 = document.querySelector('input[name="answer8"]:checked').value;
-            var result8 = document.getElementById("result8");
-
-            if (answer8 === "B") {
-                result8.textContent = "Correct, You are really smart! How did you get so smart?";
-            } else {
-                result8.textContent = "Wrong, How did you not know the answer to this question? You should watch it again.";
-            }
-        }
-		
-		       function checkAnswer9() {
-            var answer9 = document.querySelector('input[name="answer9"]:checked').value;
-            var result9 = document.getElementById("result9");
-
-            if (answer9 === "A") {
-                result9.textContent = "Correct, You are really smart! How did you get so smart?";
-            } else {
-                result9.textContent = "Wrong, How did you not know the answer to this question? You should watch it again.";
-            }
-        }
-		
-		       function checkAnswer10() {
-            var answer10 = document.querySelector('input[name="answer10"]:checked').value;
-            var result10 = document.getElementById("result10");
-
-            if (answer10 === "C") {
-                result10.textContent = "Correct, You are really smart! How did you get so smart?";
-            } else {
-                result10.textContent = "Wrong, How did you not know the answer to this question? You should watch it again.";
-            }
-        }
-		
-		       function checkAnswer11() {
-            var answer11 = document.querySelector('input[name="answer11"]:checked').value;
-            var result11 = document.getElementById("result11");
-
-            if (answer11 === "B") {
-                result11.textContent = "Correct, You are really smart! How did you get so smart?";
-            } else {
-                result11.textContent = "Wrong, How did you not know the answer to this question? You should watch it again.";
-            }
-        }
-		
-		       function checkAnswer12() {
-            var answer12 = document.querySelector('input[name="answer12"]:checked').value;
-            var result12 = document.getElementById("result12");
-
-            if (answer12 === "C") {
-                result12.textContent = "Correct, You are really smart! How did you get so smart?";
-            } else {
-                result12.textContent = "Wrong, How did you not know the answer to this question? You should watch it again.";
-            }
-        }
-		
-		       function checkAnswer13() {
-            var answer13 = document.querySelector('input[name="answer13"]:checked').value;
-            var result13 = document.getElementById("result13");
-
-            if (answer13 === "A") {
-                result13.textContent = "Correct, You are really smart! How did you get so smart?";
-            } else {
-                result13.textContent = "Wrong, How did you not know the answer to this question? You should watch it again.";
-            }
-        }
-		
-		       function checkAnswer14() {
-            var answer14 = document.querySelector('input[name="answer14"]:checked').value;
-            var result14 = document.getElementById("result14");
-
-            if (answer14 === "C") {
-                result14.textContent = "Correct, You are really smart! How did you get so smart?";
-            } else {
-                result14.textContent = "Wrong, How did you not know the answer to this question? You should watch it again.";
-            }
-        }
-		
-		       function checkAnswer15() {
-            var answer15 = document.querySelector('input[name="answer15"]:checked').value;
-            var result15 = document.getElementById("result15");
-
-            if (answer15 === "B") {
-                result15.textContent = "Correct, You are really smart! How did you get so smart?";
-            } else {
-                result1.textContent = "Wrong, How did you not know the answer to this question? You should watch it again.";
-            }
-        }
-		
-		       function checkAnswer16() {
-            var answer16 = document.querySelector('input[name="answer16"]:checked').value;
-            var result16 = document.getElementById("result16");
-
-            if (answer16 === "A") {
-                result16.textContent = "Correct, You are really smart! How did you get so smart?";
-            } else {
-                result16.textContent = "Wrong, How did you not know the answer to this question? You should watch it again.";
-            }
-        }
+        function checkAnswer1() { checkAnswer(1, "B"); }
+        function checkAnswer2() { checkAnswer(2, "A"); }
+        function checkAnswer3() { checkAnswer(3, "C"); }
+        function checkAnswer4() { checkAnswer(4, "A"); }
+        function checkAnswer5() { checkAnswer(5, "B"); }
+        function checkAnswer6() { checkAnswer(6, "C"); }
+        function checkAnswer7() { checkAnswer(7, "B"); }
+        function checkAnswer8() { checkAnswer(8, "B"); }
+        function checkAnswer9() { checkAnswer(9, "A"); }
+        function checkAnswer10() { checkAnswer(10, "C"); }
+        function checkAnswer11() { checkAnswer(11, "B"); }
+        function checkAnswer12() { checkAnswer(12, "C"); }
+        function checkAnswer13() { checkAnswer(13, "A"); }
+        function checkAnswer14() { checkAnswer(14, "C"); }
+        function checkAnswer15() { checkAnswer(15, "B"); }
+        function checkAnswer16() { checkAnswer(16, "A"); }
+        function checkAnswer17() { checkAnswer(17, "A"); }
+        function checkAnswer18() { checkAnswer(18, "C"); }
+        function checkAnswer19() { checkAnswer(19, "B"); }
+        function checkAnswer20() { checkAnswer(20, "A"); }
+        function checkAnswer21() { checkAnswer(21, "C"); }
+        function checkAnswer22() { checkAnswer(22, "B"); }
+        function checkAnswer23() { checkAnswer(23, "A"); }
+        function checkAnswer24() { checkAnswer(24, "C"); }
+        function checkAnswer25() { checkAnswer(25, "B"); }
+        function checkAnswer26() { checkAnswer(26, "A"); }
+        function checkAnswer27() { checkAnswer(27, "C"); }
+        function checkAnswer28() { checkAnswer(28, "B"); }
+        function checkAnswer29() { checkAnswer(29, "A"); }
+        function checkAnswer30() { checkAnswer(30, "C"); }
+        function checkAnswer31() { checkAnswer(31, "B"); }
+        function checkAnswer32() { checkAnswer(32, "A"); }
+        function checkAnswer33() { checkAnswer(33, "C"); }
+        function checkAnswer34() { checkAnswer(34, "B"); }
+        function checkAnswer35() { checkAnswer(35, "A"); }
+        function checkAnswer36() { checkAnswer(36, "C"); }
     </script>
 </head>
 <body>
@@ -342,6 +217,206 @@
         <input type="button" value="Submit" onclick="checkAnswer16()">
     </form>
     <p id="result16"></p>
+
+    <h1>Question 17</h1>
+    <h2>In The Fresh Prince of Bel-Air, which city does Will move from?</h2>
+    <form>
+        <input type="radio" name="answer17" value="A"> A. Philadelphia<br>
+        <input type="radio" name="answer17" value="B"> B. Chicago<br>
+        <input type="radio" name="answer17" value="C"> C. Detroit<br><br>
+        <input type="button" value="Submit" onclick="checkAnswer17()">
+    </form>
+    <p id="result17"></p>
+
+    <h1>Question 18</h1>
+    <h2>What is the name of Khadijah's magazine in Living Single?</h2>
+    <form>
+        <input type="radio" name="answer18" value="A"> A. Uptown<br>
+        <input type="radio" name="answer18" value="B"> B. The City<br>
+        <input type="radio" name="answer18" value="C"> C. Flavor<br><br>
+        <input type="button" value="Submit" onclick="checkAnswer18()">
+    </form>
+    <p id="result18"></p>
+
+    <h1>Question 19</h1>
+    <h2>Which Los Angeles high school does Moesha attend in the sitcom?</h2>
+    <form>
+        <input type="radio" name="answer19" value="A"> A. Westlake High<br>
+        <input type="radio" name="answer19" value="B"> B. Crenshaw High<br>
+        <input type="radio" name="answer19" value="C"> C. Beverly Hills High<br><br>
+        <input type="button" value="Submit" onclick="checkAnswer19()">
+    </form>
+    <p id="result19"></p>
+
+    <h1>Question 20</h1>
+    <h2>What is the last name of the family on The Cosby Show?</h2>
+    <form>
+        <input type="radio" name="answer20" value="A"> A. Huxtable<br>
+        <input type="radio" name="answer20" value="B"> B. Winslow<br>
+        <input type="radio" name="answer20" value="C"> C. Banks<br><br>
+        <input type="button" value="Submit" onclick="checkAnswer20()">
+    </form>
+    <p id="result20"></p>
+
+    <h1>Question 21</h1>
+    <h2>What is Martin Payne's job on the sitcom Martin?</h2>
+    <form>
+        <input type="radio" name="answer21" value="A"> A. Teacher<br>
+        <input type="radio" name="answer21" value="B"> B. Doctor<br>
+        <input type="radio" name="answer21" value="C"> C. Radio host<br><br>
+        <input type="button" value="Submit" onclick="checkAnswer21()">
+    </form>
+    <p id="result21"></p>
+
+    <h1>Question 22</h1>
+    <h2>What is the name of the fictional college in A Different World?</h2>
+    <form>
+        <input type="radio" name="answer22" value="A"> A. Hillcrest University<br>
+        <input type="radio" name="answer22" value="B"> B. Hillman College<br>
+        <input type="radio" name="answer22" value="C"> C. Langston College<br><br>
+        <input type="button" value="Submit" onclick="checkAnswer22()">
+    </form>
+    <p id="result22"></p>
+
+    <h1>Question 23</h1>
+    <h2>Which R&amp;B group released the hit song "Waterfalls"?</h2>
+    <form>
+        <input type="radio" name="answer23" value="A"> A. TLC<br>
+        <input type="radio" name="answer23" value="B"> B. SWV<br>
+        <input type="radio" name="answer23" value="C"> C. En Vogue<br><br>
+        <input type="button" value="Submit" onclick="checkAnswer23()">
+    </form>
+    <p id="result23"></p>
+
+    <h1>Question 24</h1>
+    <h2>Which R&amp;B trio recorded the 1992 hit "I'm So Into You"?</h2>
+    <form>
+        <input type="radio" name="answer24" value="A"> A. Xscape<br>
+        <input type="radio" name="answer24" value="B"> B. Total<br>
+        <input type="radio" name="answer24" value="C"> C. SWV<br><br>
+        <input type="button" value="Submit" onclick="checkAnswer24()">
+    </form>
+    <p id="result24"></p>
+
+    <h1>Question 25</h1>
+    <h2>Which California city is associated with the hip-hop group N.W.A.?</h2>
+    <form>
+        <input type="radio" name="answer25" value="A"> A. Oakland<br>
+        <input type="radio" name="answer25" value="B"> B. Compton<br>
+        <input type="radio" name="answer25" value="C"> C. Sacramento<br><br>
+        <input type="button" value="Submit" onclick="checkAnswer25()">
+    </form>
+    <p id="result25"></p>
+
+    <h1>Question 26</h1>
+    <h2>Which group originally recorded "Before I Let Go" in 1981?</h2>
+    <form>
+        <input type="radio" name="answer26" value="A"> A. Maze featuring Frankie Beverly<br>
+        <input type="radio" name="answer26" value="B"> B. Earth, Wind &amp; Fire<br>
+        <input type="radio" name="answer26" value="C"> C. The Isley Brothers<br><br>
+        <input type="button" value="Submit" onclick="checkAnswer26()">
+    </form>
+    <p id="result26"></p>
+
+    <h1>Question 27</h1>
+    <h2>Which group released the 1999 song "No Scrubs"?</h2>
+    <form>
+        <input type="radio" name="answer27" value="A"> A. Destiny's Child<br>
+        <input type="radio" name="answer27" value="B"> B. SWV<br>
+        <input type="radio" name="answer27" value="C"> C. TLC<br><br>
+        <input type="button" value="Submit" onclick="checkAnswer27()">
+    </form>
+    <p id="result27"></p>
+
+    <h1>Question 28</h1>
+    <h2>Which singer is widely known as the "Queen of Soul"?</h2>
+    <form>
+        <input type="radio" name="answer28" value="A"> A. Diana Ross<br>
+        <input type="radio" name="answer28" value="B"> B. Aretha Franklin<br>
+        <input type="radio" name="answer28" value="C"> C. Gladys Knight<br><br>
+        <input type="button" value="Submit" onclick="checkAnswer28()">
+    </form>
+    <p id="result28"></p>
+
+    <h1>Question 29</h1>
+    <h2>Which grain is a staple ingredient in jambalaya?</h2>
+    <form>
+        <input type="radio" name="answer29" value="A"> A. Rice<br>
+        <input type="radio" name="answer29" value="B"> B. Barley<br>
+        <input type="radio" name="answer29" value="C"> C. Quinoa<br><br>
+        <input type="button" value="Submit" onclick="checkAnswer29()">
+    </form>
+    <p id="result29"></p>
+
+    <h1>Question 30</h1>
+    <h2>What U.S. holiday commemorates the end of slavery in the United States?</h2>
+    <form>
+        <input type="radio" name="answer30" value="A"> A. Labor Day<br>
+        <input type="radio" name="answer30" value="B"> B. Memorial Day<br>
+        <input type="radio" name="answer30" value="C"> C. Juneteenth<br><br>
+        <input type="button" value="Submit" onclick="checkAnswer30()">
+    </form>
+    <p id="result30"></p>
+
+    <h1>Question 31</h1>
+    <h2>Who became the first Black woman to travel into space?</h2>
+    <form>
+        <input type="radio" name="answer31" value="A"> A. Katherine Johnson<br>
+        <input type="radio" name="answer31" value="B"> B. Mae Jemison<br>
+        <input type="radio" name="answer31" value="C"> C. Dorothy Vaughan<br><br>
+        <input type="button" value="Submit" onclick="checkAnswer31()">
+    </form>
+    <p id="result31"></p>
+
+    <h1>Question 32</h1>
+    <h2>Which team did Jackie Robinson join when he broke MLB's color barrier in 1947?</h2>
+    <form>
+        <input type="radio" name="answer32" value="A"> A. Brooklyn Dodgers<br>
+        <input type="radio" name="answer32" value="B"> B. New York Yankees<br>
+        <input type="radio" name="answer32" value="C"> C. Chicago Cubs<br><br>
+        <input type="button" value="Submit" onclick="checkAnswer32()">
+    </form>
+    <p id="result32"></p>
+
+    <h1>Question 33</h1>
+    <h2>Which NBA team did Michael Jordan lead to six championships in the 1990s?</h2>
+    <form>
+        <input type="radio" name="answer33" value="A"> A. Los Angeles Lakers<br>
+        <input type="radio" name="answer33" value="B"> B. Detroit Pistons<br>
+        <input type="radio" name="answer33" value="C"> C. Chicago Bulls<br><br>
+        <input type="button" value="Submit" onclick="checkAnswer33()">
+    </form>
+    <p id="result33"></p>
+
+    <h1>Question 34</h1>
+    <h2>What is the last name of the family in the sitcom Family Matters?</h2>
+    <form>
+        <input type="radio" name="answer34" value="A"> A. Banks<br>
+        <input type="radio" name="answer34" value="B"> B. Winslow<br>
+        <input type="radio" name="answer34" value="C"> C. Tanner<br><br>
+        <input type="button" value="Submit" onclick="checkAnswer34()">
+    </form>
+    <p id="result34"></p>
+
+    <h1>Question 35</h1>
+    <h2>What is the name of the butler on The Fresh Prince of Bel-Air?</h2>
+    <form>
+        <input type="radio" name="answer35" value="A"> A. Geoffrey<br>
+        <input type="radio" name="answer35" value="B"> B. Winston<br>
+        <input type="radio" name="answer35" value="C"> C. Benson<br><br>
+        <input type="button" value="Submit" onclick="checkAnswer35()">
+    </form>
+    <p id="result35"></p>
+
+    <h1>Question 36</h1>
+    <h2>Which Nintendo handheld game system launched in 1989?</h2>
+    <form>
+        <input type="radio" name="answer36" value="A"> A. Nintendo DS<br>
+        <input type="radio" name="answer36" value="B"> B. Game Boy Advance<br>
+        <input type="radio" name="answer36" value="C"> C. Game Boy<br><br>
+        <input type="button" value="Submit" onclick="checkAnswer36()">
+    </form>
+    <p id="result36"></p>
 </body>
 </html>
 
