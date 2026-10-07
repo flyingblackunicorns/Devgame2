@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>So You Say You Know Black People</title>
+  <script>
+    const totalQuestions = 36;
+
+    const answerKey = {
+      1: "B", 2: "A", 3: "C", 4: "A", 5: "B", 6: "C", 7: "B", 8: "B",
+      9: "A", 10: "C", 11: "B", 12: "C", 13: "A", 14: "C", 15: "B", 16: "A",
+      17: "A", 18: "C", 19: "B", 20: "A", 21: "C", 22: "B", 23: "A", 24: "C",
+      25: "B", 26: "A", 27: "C", 28: "B", 29: "A", 30: "C", 31: "B", 32: "A",
+      33: "C", 34: "B", 35: "A", 36: "C"
+    };
+
+    const funnyRight = [
+      "You got it buddy, you're right!",
+      "You must be a smart one, you are right!",
+      "Look at you go! That's right!",
+      "Boom! Correct answer, superstar.",
+      "You nailed it. Big brain energy!",
+      "Correct! You came ready today."
+    ];
+
+    const funnyWrong = [
+      "Somebody needs to study for the test next time, sorry you're wrong.",
+      "You must have been in the bathroom during that part, sorry you're wrong.",
+      "Nope! That answer took a wrong turn.",
+      "Wrong answer, but I respect the confidence.",
+      "Close... not really. Sorry, you're wrong.",
+      "That was brave, but wrong."
+    ];
+
+    function randomLine(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    function submitAllAnswers() {
+      let totalRight = 0;
+
+      for (let i = 1; i <= totalQuestions; i++) {
+        const selected = document.querySelector(`input[name="answer${i}"]:checked`);
+        const result = document.getElementById(`result${i}`);
+
+        if (!selected) {
+          result.textContent = "No answer selected.";
+          continue;
+        }
+
+        if (selected.value === answerKey[i]) {
+          result.textContent = randomLine(funnyRight);
+          totalRight++;
+        } else {
+          result.textContent = randomLine(funnyWrong);
+        }
+      }
+
+      document.getElementById("finalScore").textContent =
+        `Congrats you have ${totalRight} out of ${totalQuestions} correct!`;
+    }
+  </script>
+</head>
+<body>
+  <h1>So You Say You Know Black People</h1>
+
+  <h2>Question 1: Who was the actor that played Craig in the Friday Movies?</h2>
+  <label><input type="radio" name="answer1" value="A"> A. Mike Epps</label><br>
+  <label><input type="radio" name="answer1" value="B"> B. Ice Cube</label><br>
+  <label><input type="radio" name="answer1" value="C"> C. Chris Tucker</label><br>
+  <p id="result1"></p>
+
+  <h2>Question 2: What is the father's name on the Simpsons?</h2>
+  <label><input type="radio" name="answer2" value="A"> A. Homer Simpson</label><br>
+  <label><input type="radio" name="answer2" value="B"> B. Maggie</label><br>
+  <label><input type="radio" name="answer2" value="C"> C. Ronald McDonald</label><br>
+  <p id="result2"></p>
+
+  <h2>Question 3: When you go to a black family gathering what is the dish everybody wants to know who made it?</h2>
+  <label><input type="radio" name="answer3" value="A"> A. Ham</label><br>
+  <label><input type="radio" name="answer3" value="B"> B. Pumpkin pie</label><br>
+  <label><input type="radio" name="answer3" value="C"> C. Potato Salad</label><br>
+  <p id="result3"></p>
+
+  <h2>Question 4: In Boyz n the Hood what was Ricky drinking when he got shot?</h2>
+  <label><input type="radio" name="answer4" value="A"> A. Milk</label><br>
+  <label><input type="radio" name="answer4" value="B"> B. A 40 ounce</label><br>
+  <label><input type="radio" name="answer4" value="C"> C. Mountain Dew</label><br>
+  <p id="result4"></p>
+
+  <h2>Question 5: When was the last time Lauryn Hill was on time for a concert?</h2>
+  <label><input type="radio" name="answer5" value="A"> A. When she was with the Fugees</label><br>
+  <label><input type="radio" name="answer5" value="B"> B. Never</label><br>
+  <label><input type="radio" name="answer5" value="C"> C. 7 O'clock in her drop top</label><br>
+  <p id="result5"></p>
+
+  <h2>Question 6: Bag lady you gon' hurt yo _______? Carrying all them ________ like that.</h2>
+  <label><input type="radio" name="answer6" value="A"> A. Foot, troubles</label><br>
+  <label><input type="radio" name="answer6" value="B"> B. Knee, people</label><br>
+  <label><input type="radio" name="answer6" value="C"> C. Back, Bags</label><br>
+  <p id="result6"></p>
+
+  <h2>Question 7: In Tales from the Hood, what were the little people who haunted the house called?</h2>
+  <label><input type="radio" name="answer7" value="A"> A. Charcole</label><br>
+  <label><input type="radio" name="answer7" value="B"> B. Nigglets</label><br>
+  <label><input type="radio" name="answer7" value="C"> C. Pick a nineys</label><br>
+  <p id="result7"></p>
+
+  <h2>Question 8: Who was the actor that played Craig in the Friday Movies?</h2>
+  <label><input type="radio" name="answer8" value="A"> A. Mike Epps</label><br>
+  <label><input type="radio" name="answer8" value="B"> B. Ice Cube</label><br>
+  <label><input type="radio" name="answer8" value="C"> C. Chris Tucker</label><br>
+  <p id="result8"></p>
+
+  <h2>Question 9: (Add your custom question here)</h2>
+  <label><input type="radio" name="answer9" value="A"> A. Option A</label><br>
+  <label><input type="radio" name="answer9" value="B"> B. Option B</label><br>
+  <label><input type="radio" name="answer9" value="C"> C. Option C</label><br>
+  <p id="result9"></p>
+
+  <h2>Question 10: (Add your custom question here)</h2>
+  <label><input type="radio" name="answer10" value="A"> A. Option A</label><br>
+  <label><input type="radio" name="answer10" value="B"> B. Option B</label><br>
+  <label><input type="radio" name="answer10" value="C"> C. Option C</label><br>
+  <p id="result10"></p>
+
+  <h2>Question 11: (Add your custom question here)</h2>
+  <label><input type="radio" name="answer11" value="A"> A. Option A</label><br>
+  <label><input type="radio" name="answer11" value="B"> B. Option B</label><br>
+  <label><input type="radio" name="answer11" value="C"> C. Option C</label><br>
+  <p id="result11"></p>
+
+  <h2>Question 12: (Add your custom question here)</h2>
+  <label><input type="radio" name="answer12" value="A"> A. Option A</label><br>
+  <label><input type="radio" name="answer12" value="B"> B. Option B</label><br>
+  <label><input type="radio" name="answer12" value="C"> C. Option C</label><br>
+  <p id="result12"></p>
+
+  <h2>Question 13: (Add your custom question here)</h2>
+  <label><input type="radio" name="answer13" value="A"> A. Option A</label><br>
+  <label><input type="radio" name="answer13" value="B"> B. Option B</label><br>
+  <label><input type="radio" name="answer13" value="C"> C. Option C</label><br>
+  <p id="result13"></p>
+
+  <h2>Question 14: (Add your custom question here)</h2>
+  <label><input type="radio" name="answer14" value="A"> A. Option A</label><br>
+  <label><input type="radio" name="answer14" value="B"> B. Option B</label><br>
+  <label><input type="radio" name="answer14" value="C"> C. Option C</label><br>
+  <p id="result14"></p>
+
+  <h2>Question 15: (Add your custom question here)</h2>
+  <label><input type="radio" name="answer15" value="A"> A. Option A</label><br>
+  <label><input type="radio" name="answer15" value="B"> B. Option B</label><br>
+  <label><input type="radio" name="answer15" value="C"> C. Option C</label><br>
+  <p id="result15"></p>
+
+  <h2>Question 16: (Add your custom question here)</h2>
+  <label><input type="radio" name="answer16" value="A"> A. Option A</label><br>
+  <label><input type="radio" name="answer16" value="B"> B. Option B</label><br>
+  <label><input type="radio" name="answer16" value="C"> C. Option C</label><br>
+  <p id="result16"></p>
+
+  <h2>Question 17: In The Fresh Prince of Bel-Air, which city does Will move from?</h2>
+  <label><input type="radio" name="answer17" value="A"> A. Philadelphia</label><br>
+  <label><input type="radio" name="answer17" value="B"> B. Chicago</label><br>
+  <label><input type="radio" name="answer17" value="C"> C. Detroit</label><br>
+  <p id="result17"></p>
+
+  <h2>Question 18: What is the name of Khadijah's magazine in Living Single?</h2>
+  <label><input type="radio" name="answer18" value="A"> A. Uptown</label><br>
+  <label><input type="radio" name="answer18" value="B"> B. The City</label><br>
+  <label><input type="radio" name="answer18" value="C"> C. Flavor</label><br>
+  <p id="result18"></p>
+
+  <h2>Question 19: Which Los Angeles high school does Moesha attend in the sitcom?</h2>
+  <label><input type="radio" name="answer19" value="A"> A. Westlake High</label><br>
+  <label><input type="radio" name="answer19" value="B"> B. Crenshaw High</label><br>
+  <label><input type="radio" name="answer19" value="C"> C. Beverly Hills High</label><br>
+  <p id="result19"></p>
+
+  <h2>Question 20: What is the last name of the family on The Cosby Show?</h2>
+  <label><input type="radio" name="answer20" value="A"> A. Huxtable</label><br>
+  <label><input type="radio" name="answer20" value="B"> B. Winslow</label><br>
+  <label><input type="radio" name="answer20" value="C"> C. Banks</label><br>
+  <p id="result20"></p>
+
+  <h2>Question 21: What is Martin Payne's job on the sitcom Martin?</h2>
+  <label><input type="radio" name="answer21" value="A"> A. Teacher</label><br>
+  <label><input type="radio" name="answer21" value="B"> B. Doctor</label><br>
+  <label><input type="radio" name="answer21" value="C"> C. Radio host</label><br>
+  <p id="result21"></p>
+
+  <h2>Question 22: What is the name of the fictional college in A Different World?</h2>
+  <label><input type="radio" name="answer22" value="A"> A. Hillcrest University</label><br>
+  <label><input type="radio" name="answer22" value="B"> B. Hillman College</label><br>
+  <label><input type="radio" name="answer22" value="C"> C. Langston College</label><br>
+  <p id="result22"></p>
+
+  <h2>Question 23: Which R&B group released the hit song "Waterfalls"?</h2>
+  <label><input type="radio" name="answer23" value="A"> A. TLC</label><br>
+  <label><input type="radio" name="answer23" value="B"> B. SWV</label><br>
+  <label><input type="radio" name="answer23" value="C"> C. En Vogue</label><br>
+  <p id="result23"></p>
+
+  <h2>Question 24: Which R&B trio recorded the 1992 hit "I'm So Into You"?</h2>
+  <label><input type="radio" name="answer24" value="A"> A. Xscape</label><br>
+  <label><input type="radio" name="answer24" value="B"> B. Total</label><br>
+  <label><input type="radio" name="answer24" value="C"> C. SWV</label><br>
+  <p id="result24"></p>
+
+  <h2>Question 25: Which California city is associated with the hip-hop group N.W.A.?</h2>
+  <label><input type="radio" name="answer25" value="A"> A. Oakland</label><br>
+  <label><input type="radio" name="answer25" value="B"> B. Compton</label><br>
+  <label><input type="radio" name="answer25" value="C"> C. Sacramento</label><br>
+  <p id="result25"></p>
+
+  <h2>Question 26: Which group originally recorded "Before I Let Go" in 1981?</h2>
+  <label><input type="radio" name="answer26" value="A"> A. Maze featuring Frankie Beverly</label><br>
+  <label><input type="radio" name="answer26" value="B"> B. Earth, Wind & Fire</label><br>
+  <label><input type="radio" name="answer26" value="C"> C. The Isley Brothers</label><br>
+  <p id="result26"></p>
+
+  <h2>Question 27: Which group released the 1999 song "No Scrubs"?</h2>
+  <label><input type="radio" name="answer27" value="A"> A. Destiny's Child</label><br>
+  <label><input type="radio" name="answer27" value="B"> B. SWV</label><br>
+  <label><input type="radio" name="answer27" value="C"> C. TLC</label><br>
+  <p id="result27"></p>
+
+  <h2>Question 28: Which singer is widely known as the "Queen of Soul"?</h2>
+  <label><input type="radio" name="answer28" value="A"> A. Diana Ross</label><br>
+  <label><input type="radio" name="answer28" value="B"> B. Aretha Franklin</label><br>
+  <label><input type="radio" name="answer28" value="C"> C. Gladys Knight</label><br>
+  <p id="result28"></p>
+
+  <h2>Question 29: Which grain is a staple ingredient in jambalaya?</h2>
+  <label><input type="radio" name="answer29" value="A"> A. Rice</label><br>
+  <label><input type="radio" name="answer29" value="B"> B. Barley</label><br>
+  <label><input type="radio" name="answer29" value="C"> C. Quinoa</label><br>
+  <p id="result29"></p>
+
+  <h2>Question 30: What U.S. holiday commemorates the end of slavery in the United States?</h2>
+  <label><input type="radio" name="answer30" value="A"> A. Labor Day</label><br>
+  <label><input type="radio" name="answer30" value="B"> B. Memorial Day</label><br>
+  <label><input type="radio" name="answer30" value="C"> C. Juneteenth</label><br>
+  <p id="result30"></p>
+
+  <h2>Question 31: Who became the first Black woman to travel into space?</h2>
+  <label><input type="radio" name="answer31" value="A"> A. Katherine Johnson</label><br>
+  <label><input type="radio" name="answer31" value="B"> B. Mae Jemison</label><br>
+  <label><input type="radio" name="answer31" value="C"> C. Dorothy Vaughan</label><br>
+  <p id="result31"></p>
+
+  <h2>Question 32: Which team did Jackie Robinson join when he broke MLB's color barrier in 1947?</h2>
+  <label><input type="radio" name="answer32" value="A"> A. Brooklyn Dodgers</label><br>
+  <label><input type="radio" name="answer32" value="B"> B. New York Yankees</label><br>
+  <label><input type="radio" name="answer32" value="C"> C. Chicago Cubs</label><br>
+  <p id="result32"></p>
+
+  <h2>Question 33: Which NBA team did Michael Jordan lead to six championships in the 1990s?</h2>
+  <label><input type="radio" name="answer33" value="A"> A. Los Angeles Lakers</label><br>
+  <label><input type="radio" name="answer33" value="B"> B. Detroit Pistons</label><br>
+  <label><input type="radio" name="answer33" value="C"> C. Chicago Bulls</label><br>
+  <p id="result33"></p>
+
+  <h2>Question 34: What is the last name of the family in the sitcom Family Matters?</h2>
+  <label><input type="radio" name="answer34" value="A"> A. Banks</label><br>
+  <label><input type="radio" name="answer34" value="B"> B. Winslow</label><br>
+  <label><input type="radio" name="answer34" value="C"> C. Tanner</label><br>
+  <p id="result34"></p>
+
+  <h2>Question 35: What is the name of the butler on The Fresh Prince of Bel-Air?</h2>
+  <label><input type="radio" name="answer35" value="A"> A. Geoffrey</label><br>
+  <label><input type="radio" name="answer35" value="B"> B. Winston</label><br>
+  <label><input type="radio" name="answer35" value="C"> C. Benson</label><br>
+  <p id="result35"></p>
+
+  <h2>Question 36: Which Nintendo handheld game system launched in 1989?</h2>
+  <label><input type="radio" name="answer36" value="A"> A. Nintendo DS</label><br>
+  <label><input type="radio" name="answer36" value="B"> B. Game Boy Advance</label><br>
+  <label><input type="radio" name="answer36" value="C"> C. Game Boy</label><br>
+  <p id="result36"></p>
+
+  <hr>
+  <button type="button" onclick="submitAllAnswers()">Submit All Answers</button>
+  <p id="finalScore" style="font-weight:bold; font-size:1.2em;"></p>
+</body>
+</html>
